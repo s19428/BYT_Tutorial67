@@ -25,30 +25,55 @@ namespace NUnitTestProject1.b_Money
 			testAccount.deposit(new Money(10000000, SEK));
 
 			SweBank.deposit("Alice", new Money(1000000, SEK));
+
+			DKK = new Currency("DKK", 0.17);
+			Nordea = new Bank("Nordead bank", DKK);
+			Nordea.openAccount("Montag");
 		}
 
 		[Test]
 		public void testAddRemoveTimedPayment()
 		{
-			Assert.Fail("Write test case here");
+			SweBank.addTimedPayment("Alice", "Alice", 1, 0, new Money(100, SEK), Nordea, "Montag");
+			int initialAmount = SweBank.GetBalance("Alice");
+			SweBank.tick();
+			int amountAfter = SweBank.GetBalance("Alice");
+			Assert.IsTrue(initialAmount - 100 == amountAfter);
+			SweBank.RemoveTimedPayment("Alice", "Alice");
+			SweBank.tick();
+			int amountAfterAfter = SweBank.GetBalance("Alice");
+			Assert.IsTrue(amountAfter == amountAfterAfter);
 		}
 
 		[Test]
 		public void testTimedPayment()
 		{
-			Assert.Fail("Write test case here");
+			SweBank.addTimedPayment("Alice", "Alice", 1, 0, new Money(100, SEK), Nordea, "Montag");
+			int initialAmount = SweBank.GetBalance("Alice");
+			SweBank.tick();
+			int amountAfter = SweBank.GetBalance("Alice");
+			Assert.IsTrue(initialAmount - 100 == amountAfter);
 		}
 
 		[Test]
 		public void testAddWithdraw()
 		{
-			Assert.Fail("Write test case here");
+			int initialAmount = SweBank.GetBalance("Alice");
+			SweBank.deposit("Alice", new Money(100, SEK));
+			int amountAfter = SweBank.GetBalance("Alice");
+			Assert.IsTrue(initialAmount + 100 == amountAfter);
+
+			Console.WriteLine("amount after = " + amountAfter);
+
+			SweBank.withdraw("Alice", new Money(100, SEK));
+			int finalAmount = SweBank.GetBalance("Alice");
+			Assert.AreEqual(amountAfter - 100, finalAmount);
 		}
 
 		[Test]
 		public void testGetBalance()
 		{
-			Assert.Fail("Write test case here");
+			Assert.AreEqual(1000000, SweBank.GetBalance("Alice"));
 		}
 	}
 }

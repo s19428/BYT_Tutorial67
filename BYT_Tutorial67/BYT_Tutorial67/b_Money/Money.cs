@@ -46,7 +46,7 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public string ToString()
 		{
-			return "" + amount + " " + currency.ToString();
+			return amount + " " + currency.ToString();
 		}
 
 		/**
@@ -55,7 +55,7 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public Int32 universalValue()
 		{
-			return -1;
+			return currency.universalValue(amount);
 		}
 
 		/**
@@ -63,10 +63,15 @@ namespace BYT_Tutorial67.b_Money
 		 * @param other The other Money that is being compared to this Money.
 		 * @return A bool indicating if the two monies are equal.
 		 */
-		public bool Equals(Money other)
+		public override bool Equals(object other)
 		{
+			if (other.GetType() != this.GetType())
+				return false;
+
+			Money otherMoney = (Money)other;
+
 			return amount
-				 == other.amount && currency == other.currency;
+				 == otherMoney.amount && currency == otherMoney.currency;
 		}
 
 		/**
@@ -77,7 +82,10 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public Money add(Money other)
 		{
-			return null;
+			int convertedOtherMoney = (int)other.GetAmount();
+			if (!other.currency.Equals(currency))
+				convertedOtherMoney = other.currency.valueInThisCurrency(other.amount, currency);
+			return new Money(amount + convertedOtherMoney, currency);
 		}
 
 		/**
@@ -88,7 +96,12 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public Money sub(Money other)
 		{
-			return null;
+			//other = other.negate();
+			//int convertedOtherMoney = other.currency.valueInThisCurrency(other.amount, currency);
+			int convertedOtherMoney = (int)other.GetAmount();
+			if (!other.currency.Equals(currency))
+				convertedOtherMoney = other.currency.valueInThisCurrency(other.amount, currency);
+			return new Money(amount - convertedOtherMoney, currency);
 		}
 
 		/**
@@ -119,7 +132,16 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public int CompareTo(Object other)
 		{
-			return -1;
+			if (other.GetType() != this.GetType())
+				throw new Exception("type exception");
+			else
+            {
+				Money otherMoney = (Money)other;
+				int thisUniversalValue = currency.universalValue(amount);
+				int otherUniversalValue = otherMoney.currency.universalValue(otherMoney.amount);
+
+				return thisUniversalValue - otherUniversalValue;
+			}
 		}
 	}
 }

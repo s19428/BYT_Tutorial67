@@ -52,7 +52,8 @@ namespace BYT_Tutorial67.b_Money
 				throw new AccountExistsException();
 			}
 			else {
-				var a = accountlist[accountid];
+				//var a = accountlist[accountid];
+				accountlist.Add(accountid, new Account(name, currency));
 			}
 		}
 	
@@ -64,10 +65,10 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public void deposit(string accountid, Money money)
 		{
-			if (accountlist.ContainsKey(accountid)) {
+			if (!accountlist.ContainsKey(accountid)) {
 				throw new AccountDoesNotExistException();
 			}
-				else {
+			else {
 				Account account = accountlist[accountid];
 				account.deposit(money);
 			}
@@ -84,9 +85,9 @@ namespace BYT_Tutorial67.b_Money
 			if (!accountlist.ContainsKey(accountid)) {
 				throw new AccountDoesNotExistException();
 			}
-				else {
+			else {
 				Account account = accountlist[accountid];
-				account.deposit(money);
+				account.withdraw(money);
 			}
 		}
 
@@ -98,10 +99,10 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public Int32 GetBalance(string accountid)
 		{
-				if (!accountlist.ContainsKey(accountid)) {
+			if (!accountlist.ContainsKey(accountid)) {
 				throw new AccountDoesNotExistException();
 			}
-				else {
+			else {
 				return (int)accountlist[accountid].GetBalance().GetAmount();
 			}
 		}
@@ -116,10 +117,10 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public void transfer(string fromaccount, Bank tobank, string toaccount, Money amount)
 		{
-				if (!accountlist.ContainsKey(fromaccount) || !tobank.accountlist.ContainsKey(toaccount)) {
+			if (!accountlist.ContainsKey(fromaccount) || !tobank.accountlist.ContainsKey(toaccount)) {
 				throw new AccountDoesNotExistException();
 			}
-				else {
+			else {
 				accountlist[fromaccount].withdraw(amount);
 				tobank.accountlist[toaccount].deposit(amount);
 			}
@@ -134,7 +135,7 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public void transfer(string fromaccount, string toaccount, Money amount)
 		{
-			transfer(fromaccount, this, fromaccount, amount);
+			transfer(fromaccount, this, toaccount, amount);
 		}
 
 		/**
@@ -150,7 +151,7 @@ namespace BYT_Tutorial67.b_Money
 		public void addTimedPayment(string accountid, string payid, Int32 interval, Int32 next, Money amount, Bank tobank, string toaccount)
 		{
 			Account account = accountlist[accountid];
-			account.addTimedPayment(payid, interval, next, amount, tobank, toaccount);
+			account.AddTimedPayment(payid, interval, next, amount, tobank, toaccount);
 		}
 
 		/**

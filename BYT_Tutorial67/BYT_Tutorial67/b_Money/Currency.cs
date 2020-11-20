@@ -32,7 +32,7 @@ namespace BYT_Tutorial67.b_Money
 		 */
 		public Int32 universalValue(Int32 amount)
 		{
-			return 0;
+			return (int)(amount * rate);
 		}
 
 		/** Get the name of this Currency.
@@ -68,8 +68,24 @@ namespace BYT_Tutorial67.b_Money
 		*/
 		public Int32 valueInThisCurrency(Int32 amount, Currency othercurrency)
 		{
-			return 0;
+			int universalAmount = othercurrency.universalValue(amount);
+			int amountInThisCurrency = (int)(universalAmount / rate);
+			return amountInThisCurrency;
 		}
-	}
 
+		public override string ToString()
+		{
+			return GetName();
+		}
+
+		public override bool Equals(object other)
+        {
+			if (other.GetType() != GetType())
+				return false;
+
+			Currency otherCurrency = (Currency)other;
+
+			return name == otherCurrency.name && rate == otherCurrency.rate;
+        }
+	}
 }

@@ -22,31 +22,32 @@ namespace NUnitTestProject1.b_Money
 	[Test]
 	public void testGetName()
 	{
-		Assert.Fail("Write test case here");
+			Assert.AreEqual("SEK", SEK.GetName());
 	}
 
 	[Test]
 	public void testGetRate()
 	{
-		Assert.Fail("Write test case here");
+			Assert.AreEqual(0.20, DKK.GetRate());
 	}
 
 	[Test]
 	public void testSetRate()
 	{
-		Assert.Fail("Write test case here");
+			DKK.setRate(0.19);
+			Assert.AreEqual(0.19, DKK.GetRate());
 	}
 
 	[Test]
 	public void testGlobalValue()
 	{
-		Assert.Fail("Write test case here");
+			Assert.AreEqual(100 * .15, SEK.universalValue(100));
 	}
 
 	[Test]
 	public void testValueInThisCurrency()
 	{
-		Assert.Fail("Write test case here");
+			Assert.AreEqual(133, SEK.valueInThisCurrency(100, DKK));
 	}
 
 }

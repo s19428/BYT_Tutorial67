@@ -10,7 +10,8 @@ namespace BYT_Tutorial67.b_Money
 	{
 		private Money content;
 		//private Hashtable<string, TimedPayment> timedpayments = new Hashtable<string, TimedPayment>();
-		private Hashtable timedpayments = new Hashtable();
+		//private Hashtable timedpayments = new Hashtable();
+		private Dictionary<string, TimedPayment> timedpayments = new Dictionary<string, TimedPayment>();
 
 		public Account(string name, Currency currency)
 		{
@@ -26,7 +27,7 @@ namespace BYT_Tutorial67.b_Money
 		 * @param tobank Bank where receiving account resides
 		 * @param toaccount Id of receiving account
 		 */
-		public void addTimedPayment(string id, Int32 interval, Int32 next, Money amount, Bank tobank, string toaccount)
+		public void AddTimedPayment(string id, Int32 interval, Int32 next, Money amount, Bank tobank, string toaccount)
 		{
 			TimedPayment tp = new TimedPayment(interval, next, amount, this, tobank, toaccount);
 			timedpayments.Add(id, tp);
@@ -57,7 +58,7 @@ namespace BYT_Tutorial67.b_Money
 		{
 			foreach (TimedPayment tp in timedpayments.Values)
 			{
-				tp.tick(); tp.tick();
+				tp.tick(); //tp.tick();
 			}
 		}
 
