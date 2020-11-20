@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BYT_Tutorial67.b_Money
 {
-	public class Money : IComparable
+	public class Money : IComparable<Money>
 	{
 		private int amount;
 		private Currency currency;
@@ -130,18 +130,12 @@ namespace BYT_Tutorial67.b_Money
 		 * A negative Int32 if this Money is less valuable than the other Money.
 		 * A positive Int32 if this Money is more valuiable than the other Money.
 		 */
-		public int CompareTo(Object other)
+		public int CompareTo(Money otherMoney)
 		{
-			if (other.GetType() != this.GetType())
-				throw new Exception("type exception");
-			else
-            {
-				Money otherMoney = (Money)other;
-				int thisUniversalValue = currency.universalValue(amount);
-				int otherUniversalValue = otherMoney.currency.universalValue(otherMoney.amount);
+			int thisUniversalValue = currency.universalValue(amount);
+			int otherUniversalValue = otherMoney.currency.universalValue(otherMoney.amount);
 
-				return thisUniversalValue - otherUniversalValue;
-			}
+			return thisUniversalValue - otherUniversalValue;
 		}
 	}
 }
