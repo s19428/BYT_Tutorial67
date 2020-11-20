@@ -23,10 +23,10 @@ namespace a_Introductory
 
 		public bool isRectangle()
 		{
-			Vector2D v1 = l1.getVector();
-			Vector2D v2 = l2.getVector();
-			Vector2D v3 = l3.getVector();
-			Vector2D v4 = l4.getVector();
+			Vector2D v1 = l1.GetVector();
+			Vector2D v2 = l2.GetVector();
+			Vector2D v3 = l3.GetVector();
+			Vector2D v4 = l4.GetVector();
 
 			return (v1.isOrthogonalTo(v2) &&
 					v2.isOrthogonalTo(v3) &&

@@ -94,6 +94,5 @@ D:\Academy\BYT\Tutorial67\BYT_Tutorial67\NUnitTestProject1\obj\Debug\netcoreapp3
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.dll
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.pdb
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.genruntimeconfig.cache
-D:\Academy\BYT\Tutorial67\BYT_Tutorial67\NUnitTestProject1\bin\Debug\netcoreapp3.1\BYT_Tutorial67.exe
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\NUnitTestProject1\bin\Debug\netcoreapp3.1\BYT_Tutorial67.dll
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\NUnitTestProject1\bin\Debug\netcoreapp3.1\BYT_Tutorial67.pdb

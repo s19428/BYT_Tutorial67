@@ -27,8 +27,8 @@ namespace a_Introductory
 		[Test]
 		public void testLength()
 		{
-			Assert.AreEqual(10.0498756, l1.getLength(), 0.0001);
-			Assert.AreEqual(10.0498756, l2.getLength(), 0.0001);
+			Assert.AreEqual(10.0498756, l1.GetLength(), 0.0001);
+			Assert.AreEqual(10.0498756, l2.GetLength(), 0.0001);
 			Assert.IsTrue(l1.isSameLengthAs(l2), "l1 should have same length as l2");
 		}
 	}

@@ -24,7 +24,7 @@ namespace a_Introductory
 		[Test]
 		public void testRectangle()
 		{
-			String msg = "Should be a rectangle";
+			string msg = "Should be a rectangle";
 			Assert.IsTrue(square1.isRectangle(), msg);
 			Assert.IsTrue(square2.isRectangle(), msg);
 			Assert.IsTrue(rectangle1.isRectangle(), msg);

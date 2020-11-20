@@ -1,7 +1,4 @@
-D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\bin\Debug\netcoreapp3.1\BYT_Tutorial67.exe
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\bin\Debug\netcoreapp3.1\BYT_Tutorial67.deps.json
-D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\bin\Debug\netcoreapp3.1\BYT_Tutorial67.runtimeconfig.json
-D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\bin\Debug\netcoreapp3.1\BYT_Tutorial67.runtimeconfig.dev.json
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\bin\Debug\netcoreapp3.1\BYT_Tutorial67.dll
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\bin\Debug\netcoreapp3.1\BYT_Tutorial67.pdb
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\obj\Debug\netcoreapp3.1\BYT_Tutorial67.csprojAssemblyReference.cache
@@ -10,4 +7,3 @@ D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\obj\Debug\netcoreapp3.1\
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\obj\Debug\netcoreapp3.1\BYT_Tutorial67.csproj.CoreCompileInputs.cache
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\obj\Debug\netcoreapp3.1\BYT_Tutorial67.dll
 D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\obj\Debug\netcoreapp3.1\BYT_Tutorial67.pdb
-D:\Academy\BYT\Tutorial67\BYT_Tutorial67\BYT_Tutorial67\obj\Debug\netcoreapp3.1\BYT_Tutorial67.genruntimeconfig.cache

@@ -15,19 +15,19 @@ namespace a_Introductory
 			this.p2 = p2;
 		}
 
-		public Vector2D getVector()
+		public Vector2D GetVector()
 		{
 			return new Vector2D(p1, p2);
 		}
 
-		public double getLength()
+		public double GetLength()
 		{
 			return Math.Sqrt(Math.Pow((p2.x - p1.x), 2) + Math.Pow((p2.y - p1.y), 2));
 		}
 
 		public bool isSameLengthAs(Line l)
 		{
-			return (Math.Abs(getLength() - l.getLength()) < 0.00001);
+			return (Math.Abs(GetLength() - l.GetLength()) < 0.00001);
 		}
 	}
 }
